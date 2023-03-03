@@ -9,7 +9,7 @@ CLI parameter definitions
 """
 
 from knack.arguments import ArgumentsContext
-from paconn import _LOGIN, _DOWNLOAD, _CREATE, _UPDATE, _VALIDATE
+from paconn import _LOGIN, _LIST, _DOWNLOAD, _CREATE, _UPDATE, _VALIDATE
 
 CLIENT_SECRET = 'client_secret'
 CLIENT_SECRET_OPTIONS = ['--secret', '-r']
@@ -97,6 +97,26 @@ def load_arguments(self, command):
             default=False,
             const=True,
             help='Override a previous login, if exists.')
+        arg_context.argument(
+            'user_name',
+            options_list=['--user_name', '-u'],
+            type=str,
+            required=False,
+            help='Username for the login.')
+        arg_context.argument(
+            'password',
+            options_list=['--password', '-p'],
+            type=str,
+            required=False,
+            help='Password for the login.')
+
+    with ArgumentsContext(self, _LIST) as arg_context:
+        arg_context.argument(
+            ENVIRONMENT,
+            options_list=ENVIRONMENT_OPTIONS,
+            type=str,
+            required=False,
+            help=ENVIRONMENT_HELP)
 
     with ArgumentsContext(self, _DOWNLOAD) as arg_context:
         arg_context.argument(

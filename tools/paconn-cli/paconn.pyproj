@@ -7,14 +7,12 @@
     <ProjectHome />
     <StartupFile>paconn\__main__.py</StartupFile>
     <SearchPath />
-    <WorkingDirectory>
-    </WorkingDirectory>
+    <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>Global|PythonCore|3.7</InterpreterId>
-    <CommandLineArguments>
-    </CommandLineArguments>
+    <InterpreterId>Global|PythonCore|3.8</InterpreterId>
+    <CommandLineArguments>list -e Default-e6855d53-38c8-48f3-b16a-4f89b5b98dc3</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <Name>paconn</Name>
     <IsWindowsApplication>False</IsWindowsApplication>
@@ -31,6 +29,7 @@
     <Compile Include="paconn\authentication\tokenmanager.py" />
     <Compile Include="paconn\authentication\__init__.py" />
     <Compile Include="paconn\commands\commands.py" />
+    <Compile Include="paconn\commands\list.py" />
     <Compile Include="paconn\commands\validate.py" />
     <Compile Include="paconn\commands\__init__.py" />
     <Compile Include="paconn\settings\settingsbuilder.py" />
@@ -80,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.7" />
+    <InterpreterReference Include="Global|PythonCore|3.8" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

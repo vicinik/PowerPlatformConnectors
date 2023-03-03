@@ -29,7 +29,9 @@ class Settings:
             client_id=None,
             tenant=None,
             authority_url=None,
-            resource=None):
+            resource=None,
+            user_name=None,
+            password=None):
 
         # connector specific settings
         self.connector_id = connector_id
@@ -55,3 +57,5 @@ class Settings:
         self.tenant = tenant or 'common'
         self.authority_url = authority_url or 'https://login.microsoftonline.com/'
         self.resource = resource or 'https://service.powerapps.com/'
+        self.user_name = user_name
+        self.password = password

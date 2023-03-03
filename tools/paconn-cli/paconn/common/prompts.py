@@ -16,6 +16,7 @@ _DISPLAY_NAME = 'displayName'
 _NAME = 'name'
 _IS_CUSTOM_API = 'isCustomApi'
 _CREATED_BY = 'createdBy'
+_ID = 'id'
 
 
 def get_environment(flow_rp):

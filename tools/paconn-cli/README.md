@@ -141,13 +141,21 @@ Log in to Power Platform by running:
    
 `paconn login`
 
-This command will ask you to log in using the device code login process. Follow the prompt for the log in. Service Principle authentication is not supported at this point. Please review [a customer workaround posted in the issues page](https://github.com/microsoft/PowerPlatformConnectors/issues/287).
+This command will ask you to log in using the device code login process. Follow the prompt for the log in. ~~Service Principle authentication is not supported at this point.~~ 
+
+> I've added the parameters `--user_name (-u)` and `--password (-p)` for a simple authentication especially for **CI/CD**. Use it at your own risk and never leave plain passwords in the code!
+
+Please review [a customer workaround posted in the issues page](https://github.com/microsoft/PowerPlatformConnectors/issues/287).
 
 ### Logout
 
 Logout by running:
    
 `paconn logout`
+
+### List custom connectors
+
+> This version of paconn also features a `list` command which simply lists all available custom connectors in the given environment. If no environment is given, it will be prompted. This function is very useful for **CI/CD**.
 
 ### Download Custom Connector Files
 

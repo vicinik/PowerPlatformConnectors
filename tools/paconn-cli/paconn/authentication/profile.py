@@ -53,3 +53,21 @@ class Profile:
             client_id=self.client_id)
 
         return credentials.token
+
+    def authenticate_user_name(self, user_name, password):
+        """
+        Authenticate the end-user using username and password.
+        """
+        context = self._get_authentication_context()
+        
+        mgmt_token = context.acquire_token_with_username_password(
+            resource=self.resource,
+            username=user_name,
+            password=password,
+            client_id=self.client_id)
+
+        credentials = AADTokenCredentials(
+            token=mgmt_token,
+            client_id=self.client_id)
+
+        return credentials.token

@@ -31,7 +31,10 @@ def get_authentication(settings, force_authenticate):
             resource=settings.resource,
             authority_url=settings.authority_url)
 
-        credentials = profile.authenticate_device_code()
+        if settings.user_name is None:
+            credentials = profile.authenticate_device_code()
+        else:
+            credentials = profile.authenticate_user_name(user_name=settings.user_name, password=settings.password)
 
         tokenmanager.write(credentials)
 
